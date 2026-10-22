@@ -1,0 +1,617 @@
+<section class="comandos-jugador">
+  <div class="comandos-header">
+    <h2>📋 Comandos del Jugador</h2>
+    <p class="comandos-subtitulo">Todos los comandos disponibles para jugadores en UrangutanesSMP</p>
+    <div class="comandos-buscador-wrap">
+      <input type="text" id="buscadorComandos" placeholder="🔍 Buscar comando..." oninput="filtrarComandos(this.value)" />
+    </div>
+  </div>
+
+  <div class="comandos-categorias" id="categoriaTabs">
+    <button class="cat-btn activo" onclick="mostrarCategoria('todas', this)">Todos</button>
+    <button class="cat-btn" onclick="mostrarCategoria('cuenta', this)">🔐 Cuenta</button>
+    <button class="cat-btn" onclick="mostrarCategoria('tiempo', this)">⏱ Tiempo</button>
+    <button class="cat-btn" onclick="mostrarCategoria('gremio', this)">⚔️ Gremio</button>
+    <button class="cat-btn" onclick="mostrarCategoria('economia', this)">💰 Economía</button>
+    <button class="cat-btn" onclick="mostrarCategoria('misiones', this)">📜 Misiones</button>
+    <button class="cat-btn" onclick="mostrarCategoria('mundo', this)">🌍 Mundo</button>
+    <button class="cat-btn" onclick="mostrarCategoria('social', this)">💬 Social</button>
+    <button class="cat-btn" onclick="mostrarCategoria('util', this)">🔧 Utilidad</button>
+  </div>
+
+  <div class="comandos-grid" id="comandosGrid">
+
+    <!-- ── CUENTA ─────────────────────────────────────── -->
+    <div class="cmd-card" data-cat="cuenta">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-cuenta">🔐 Cuenta</span>
+        <code class="cmd-syntax">/register &lt;contraseña&gt; &lt;contraseña&gt;</code>
+      </div>
+      <p class="cmd-desc">Registra tu cuenta la primera vez que entras al servidor. Repite la contraseña para confirmarla.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="cuenta">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-cuenta">🔐 Cuenta</span>
+        <code class="cmd-syntax">/login &lt;contraseña&gt;</code>
+      </div>
+      <p class="cmd-desc">Inicia sesión en tu cuenta tras registrarte.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="cuenta">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-cuenta">🔐 Cuenta</span>
+        <code class="cmd-syntax">/ayuda</code>
+      </div>
+      <p class="cmd-desc">Muestra la lista de comandos disponibles para tu usuario, organizados por categoría.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="cuenta">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-cuenta">🔐 Cuenta</span>
+        <code class="cmd-syntax">/avisos</code>
+      </div>
+      <p class="cmd-desc">Elige qué avisos recibir al entrar: tiempo restante, progreso de misiones, aviso del gremio y avisos del servidor.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="cuenta">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-cuenta">🔐 Cuenta</span>
+        <code class="cmd-syntax">/colorchat</code>
+      </div>
+      <p class="cmd-desc">Abre el menú para configurar el color y estilo de tus mensajes en el chat.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="cuenta">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-cuenta">🔐 Cuenta</span>
+        <code class="cmd-syntax">/colorchat hex #RRGGBB</code>
+      </div>
+      <p class="cmd-desc">Establece un color hexadecimal personalizado para tus mensajes de chat.</p>
+    </div>
+
+    <!-- ── TIEMPO ─────────────────────────────────────── -->
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/tiempo</code>
+      </div>
+      <p class="cmd-desc">Muestra el detalle de tu tiempo de juego restante del día.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/tiempo ocultar</code>
+      </div>
+      <p class="cmd-desc">Oculta la barra de tiempo en la parte superior de la pantalla.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/tiempo mostrar</code>
+      </div>
+      <p class="cmd-desc">Vuelve a mostrar la barra de tiempo si la tenías oculta.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/descanso cambiar &lt;día actual&gt; &lt;día nuevo&gt;</code>
+      </div>
+      <p class="cmd-desc">Programa el cambio de tu día largo. Entra en vigor el siguiente lunes. Solo puedes cambiarlo una vez cada 7 días. Ej: <em>/descanso cambiar viernes lunes</em></p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/descanso cancelar</code>
+      </div>
+      <p class="cmd-desc">Anula un cambio de día largo que aún no ha entrado en vigor.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/descanso restablecer</code>
+      </div>
+      <p class="cmd-desc">Vuelve a la configuración de días largos por defecto (viernes, sábado y domingo).</p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/vidas</code>
+      </div>
+      <p class="cmd-desc">Muestra tus vidas actuales y el precio para recuperar o comprar vidas adicionales.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/revivir &lt;jugador&gt;</code>
+      </div>
+      <p class="cmd-desc">Revive a un amigo que haya sido eliminado del servidor (también accesible desde el menú con ficha dorada).</p>
+    </div>
+
+    <div class="cmd-card" data-cat="tiempo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-tiempo">⏱ Tiempo</span>
+        <code class="cmd-syntax">/fases estado</code>
+      </div>
+      <p class="cmd-desc">Muestra el estado actual de las fases del servidor: qué dimensiones están abiertas, tiempo restante de cada fase y próximos eventos.</p>
+    </div>
+
+    <!-- ── GREMIO ─────────────────────────────────────── -->
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio crear &lt;siglas&gt; &lt;nombre&gt;</code>
+      </div>
+      <p class="cmd-desc">Crea un nuevo gremio. Las siglas deben tener entre 3 y 4 caracteres. Ej: <em>/gremio crear URG Urangutanes</em></p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio invitar &lt;jugador&gt;</code>
+      </div>
+      <p class="cmd-desc">Envía una invitación a un jugador para que se una a tu gremio. Requiere ser líder u oficial.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio aceptar</code>
+      </div>
+      <p class="cmd-desc">Acepta una invitación pendiente a un gremio.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio rechazar</code>
+      </div>
+      <p class="cmd-desc">Rechaza una invitación pendiente a un gremio.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio salir</code>
+      </div>
+      <p class="cmd-desc">Abandona tu gremio actual. El líder debe transferir el liderazgo antes de poder salir.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio info</code>
+      </div>
+      <p class="cmd-desc">Muestra la información de tu gremio: miembros, rangos, siglas y color.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremios</code>
+      </div>
+      <p class="cmd-desc">Lista todos los gremios activos en el servidor.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio log</code>
+      </div>
+      <p class="cmd-desc">Muestra el registro de acciones del gremio. Solo accesible para líderes y oficiales.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio cofre</code>
+      </div>
+      <p class="cmd-desc">Abre el cofre compartido del gremio (según los permisos que tenga tu rango).</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gremio pvp on / off</code>
+      </div>
+      <p class="cmd-desc">Activa o desactiva el PvP entre miembros del propio gremio.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio ascender &lt;miembro&gt;</code>
+      </div>
+      <p class="cmd-desc">Sube de rango a un miembro dentro del gremio.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio degradar &lt;miembro&gt;</code>
+      </div>
+      <p class="cmd-desc">Baja de rango a un miembro dentro del gremio.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio expulsar &lt;miembro&gt;</code>
+      </div>
+      <p class="cmd-desc">Expulsa a un miembro del gremio.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio transferir &lt;miembro&gt;</code>
+      </div>
+      <p class="cmd-desc">Transfiere el liderazgo del gremio a otro miembro.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio nombre &lt;nuevo nombre&gt;</code>
+      </div>
+      <p class="cmd-desc">Cambia el nombre completo del gremio.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio siglas &lt;nuevas siglas&gt;</code>
+      </div>
+      <p class="cmd-desc">Cambia las siglas del gremio (3-4 caracteres).</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio color &lt;color&gt;</code>
+      </div>
+      <p class="cmd-desc">Cambia el color del nombre del gremio en el chat y sobre los jugadores.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio aviso &lt;texto&gt;</code>
+      </div>
+      <p class="cmd-desc">Establece el mensaje de aviso del gremio que ven los miembros al entrar.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <span class="cmd-badge badge-lider">Solo líder</span>
+        <code class="cmd-syntax">/gremio disolver</code>
+      </div>
+      <p class="cmd-desc">Inicia la disolución del gremio. Pide confirmación antes de ejecutarse.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="gremio">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-gremio">⚔️ Gremio</span>
+        <code class="cmd-syntax">/gc &lt;mensaje&gt;</code>
+      </div>
+      <p class="cmd-desc">Envía un mensaje al chat privado del gremio. Sin argumento, alterna el modo chat-gremio (todo lo que escribas irá al gremio).</p>
+    </div>
+
+    <!-- ── ECONOMÍA ───────────────────────────────────── -->
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/banco</code>
+      </div>
+      <p class="cmd-desc">Muestra tu saldo actual en el banco y abre el menú de opciones (requiere estar cerca de un banco).</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/banco depositar &lt;cantidad&gt;</code>
+      </div>
+      <p class="cmd-desc">Deposita fichas en tu cuenta bancaria. Requiere estar cerca de un banco.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/banco retirar &lt;cantidad&gt;</code>
+      </div>
+      <p class="cmd-desc">Retira fichas de tu cuenta bancaria. Requiere estar cerca de un banco.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/tienda &lt;id&gt;</code>
+      </div>
+      <p class="cmd-desc">Abre una tienda por su ID desde cualquier lugar del servidor (si está habilitado). Sin argumentos abre la tienda principal.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/comunidad</code>
+      </div>
+      <p class="cmd-desc">Abre el menú de la tienda de la comunidad donde los jugadores venden objetos entre sí.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/comunidad vender &lt;precio&gt; [descripción]</code>
+      </div>
+      <p class="cmd-desc">Pone a la venta el objeto que llevas en la mano al precio indicado, con descripción opcional.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/comunidad retirar &lt;id&gt;</code>
+      </div>
+      <p class="cmd-desc">Retira una oferta que habías publicado en la tienda de la comunidad.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/apuesta lista</code>
+      </div>
+      <p class="cmd-desc">Muestra todas las apuestas y eventos activos disponibles en el servidor.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="economia">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-economia">💰 Economía</span>
+        <code class="cmd-syntax">/apuesta &lt;id&gt; &lt;opción&gt; &lt;cantidad&gt;</code>
+      </div>
+      <p class="cmd-desc">Apuesta fichas de tu banco en un evento activo. Ej: <em>/apuesta carrera Ana 100</em></p>
+    </div>
+
+    <!-- ── MISIONES ───────────────────────────────────── -->
+    <div class="cmd-card" data-cat="misiones">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-misiones">📜 Misiones</span>
+        <code class="cmd-syntax">/misiones</code>
+      </div>
+      <p class="cmd-desc">Abre el menú de misiones donde puedes ver y gestionar tus misiones diarias, semanales y de gremio.</p>
+    </div>
+
+    <!-- ── MUNDO ──────────────────────────────────────── -->
+    <div class="cmd-card" data-cat="mundo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-mundo">🌍 Mundo</span>
+        <code class="cmd-syntax">/pacto</code>
+      </div>
+      <p class="cmd-desc">Abre el menú para elegir tu nivel de pacto (Chile). Solo puedes cambiarlo una vez cada 24 horas.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="mundo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-mundo">🌍 Mundo</span>
+        <code class="cmd-syntax">/pacto &lt;0-3&gt;</code>
+      </div>
+      <p class="cmd-desc">Cambia directamente a un nivel de pacto: <strong>0</strong> inmunidad total · <strong>1</strong> bromas leves · <strong>2</strong> bromas moderadas · <strong>3</strong> anarquía.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="mundo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-mundo">🌍 Mundo</span>
+        <code class="cmd-syntax">/pacto reglas</code>
+      </div>
+      <p class="cmd-desc">Muestra el reglamento completo del sistema de pactos y lo que implica cada nivel.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="mundo">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-mundo">🌍 Mundo</span>
+        <code class="cmd-syntax">/pacto ver &lt;jugador&gt;</code>
+      </div>
+      <p class="cmd-desc">Consulta el nivel de pacto activo de otro jugador.</p>
+    </div>
+
+    <!-- ── SOCIAL / UTILIDAD ──────────────────────────── -->
+    <div class="cmd-card" data-cat="social">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-social">💬 Social</span>
+        <code class="cmd-syntax">/imagen &lt;url&gt; [ancho] [alto]</code>
+      </div>
+      <p class="cmd-desc">Convierte una imagen de internet en mapas colocables. Necesitas tener un ticket de imagen en la mano. El tamaño es en chunks de mapa (1×1, 1×2, 2×2, etc.).</p>
+    </div>
+
+    <div class="cmd-card" data-cat="util">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-util">🔧 Utilidad</span>
+        <code class="cmd-syntax">/muneco quitar</code>
+      </div>
+      <p class="cmd-desc">Retira el muñeco NPC activo que mantiene cargados los chunks de tu base o granja.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="util">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-util">🔧 Utilidad</span>
+        <code class="cmd-syntax">/estantes</code>
+      </div>
+      <p class="cmd-desc">Muestra la lista de estantes de tienda registrados en el mundo.</p>
+    </div>
+
+    <div class="cmd-card" data-cat="util">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-util">🔧 Utilidad</span>
+        <code class="cmd-syntax">/refrescar-estantes</code>
+      </div>
+      <p class="cmd-desc">Actualiza los textos visibles en los estantes de tienda (útil tras cambiar precios).</p>
+    </div>
+
+    <div class="cmd-card" data-cat="util">
+      <div class="cmd-header">
+        <span class="cmd-tag tag-util">🔧 Utilidad</span>
+        <code class="cmd-syntax">/quitar-estante</code>
+      </div>
+      <p class="cmd-desc">Elimina el estante que estás mirando. Debes apuntar directamente al estante para que funcione.</p>
+    </div>
+
+  </div><!-- /comandos-grid -->
+</section>
+
+<style>
+.comandos-jugador {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.comandos-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+.comandos-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+.comandos-subtitulo {
+  color: #888;
+  margin-bottom: 1rem;
+}
+.comandos-buscador-wrap input {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.6rem 1rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.comandos-buscador-wrap input:focus { border-color: #7c6aff; }
+
+.comandos-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.cat-btn {
+  padding: 0.4rem 1rem;
+  border: 2px solid #333;
+  border-radius: 20px;
+  background: transparent;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.18s;
+}
+.cat-btn:hover { border-color: #7c6aff; color: #fff; }
+.cat-btn.activo { background: #7c6aff; border-color: #7c6aff; color: #fff; font-weight: 600; }
+
+.comandos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1rem;
+}
+.cmd-card {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.cmd-card:hover { border-color: #7c6aff; transform: translateY(-2px); }
+.cmd-card.oculto { display: none; }
+
+.cmd-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+.cmd-syntax {
+  display: block;
+  width: 100%;
+  background: #1e1e2e;
+  color: #a9dc76;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  word-break: break-all;
+}
+.cmd-desc { color: #bbb; font-size: 0.88rem; line-height: 1.5; margin: 0; }
+.cmd-desc strong { color: #e0e0e0; }
+.cmd-desc em { color: #a9dc76; font-style: normal; }
+
+.cmd-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.tag-cuenta   { background: #2a1f4a; color: #b794f4; }
+.tag-tiempo   { background: #1a2f3a; color: #63b3ed; }
+.tag-gremio   { background: #2f1a1a; color: #fc8181; }
+.tag-economia { background: #1f2f1a; color: #68d391; }
+.tag-misiones { background: #2f2a1a; color: #f6ad55; }
+.tag-mundo    { background: #1a2f2a; color: #4fd1c5; }
+.tag-social   { background: #1a1a2f; color: #76e4f7; }
+.tag-util     { background: #2a2a2a; color: #e2e8f0; }
+
+.cmd-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.badge-lider { background: #2f1a00; color: #fbd38d; border: 1px solid #744210; }
+
+@media (max-width: 600px) {
+  .comandos-grid { grid-template-columns: 1fr; }
+  .comandos-header h2 { font-size: 1.4rem; }
+}
+</style>
+
+<script>
+function filtrarComandos(query) {
+  const q = query.toLowerCase();
+  document.querySelectorAll('.cmd-card').forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.classList.toggle('oculto', q.length > 0 && !text.includes(q));
+  });
+}
+
+function mostrarCategoria(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('activo'));
+  btn.classList.add('activo');
+  document.querySelectorAll('.cmd-card').forEach(card => {
+    if (cat === 'todas') {
+      card.classList.remove('oculto');
+    } else {
+      card.classList.toggle('oculto', card.dataset.cat !== cat);
+    }
+  });
+  document.getElementById('buscadorComandos').value = '';
+}
+</script>
